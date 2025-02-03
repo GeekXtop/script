@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube自动翻译评论
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  自动点击YouTube评论区翻译按钮
 // @author       GeekXtop
 // @match        https://www.youtube.com/*
@@ -50,7 +50,7 @@
     const commentsSection = document.querySelector('ytd-comments')
     if (!commentsSection) return null
 
-    const observer = new MutationObserver(() => {
+    const observer = new MutationObserver((mutations) => {
       // 检测到评论容器变化时触发
       clickTranslateButton()
     })
@@ -60,7 +60,7 @@
       childList: true,
       subtree: true,
       attributes: true,
-      attributeFilter: ['class'],
+      attributeFilter: ['class', 'style'],
     })
 
     // 添加滚动事件监听（带节流）
