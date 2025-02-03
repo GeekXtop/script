@@ -22,14 +22,12 @@
 
   // 精确查找翻译按钮
   function findTranslateButton() {
-    return Array.from(
-      document.querySelectorAll(
-        'tp-yt-paper-button.ytd-tri-state-button-view-model'
-      )
-    ).find((button) => {
-      const buttonText = button.textContent.trim()
-      return buttonText && buttonText.includes(config.translationText)
-    })
+    return Array.from(document.querySelectorAll(config.targetButtonClass)).find(
+      (button) => {
+        const buttonText = button.textContent.trim()
+        return buttonText && buttonText.includes(config.translationText)
+      }
+    )
   }
 
   // 执行点击操作（带防抖）
