@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  自动点击YouTube评论区翻译按钮
-// @author       YourName
+// @author       GeekXtop
 // @match        https://www.youtube.com/*
 // @grant        none
 // ==/UserScript==
