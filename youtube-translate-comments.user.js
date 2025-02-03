@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         YouTube Auto Expand & Translate Comments
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.5
 // @description  自动展开并翻译YouTube评论区回复
-// @author       Cline
+// @author       GeekXtop
 // @match        https://www.youtube.com/watch*
 // @grant        none
+// @licence      MIT
 // ==/UserScript==
 
 ;(function () {
