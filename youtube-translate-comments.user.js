@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube自动展开&翻译评论
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @description  自动展开并翻译YouTube评论区回复
 // @author       GeekXtop
 // @match        https://www.youtube.com/watch*
@@ -30,7 +30,7 @@
   const clickTranslateButtons = () => {
     document
       .querySelectorAll(
-        'ytd-tri-state-button-view-model.translate-button.style-scope.ytd-comment-view-model'
+        'ytd-tri-state-button-view-model.translate-button.ytd-comment-view-model'
       )
       .forEach((btn) => {
         const button = btn.querySelector('tp-yt-paper-button')
@@ -39,7 +39,7 @@
           console.log('已触发翻译')
           // 添加防抖处理避免重复点击
           button.style.pointerEvents = 'none'
-          setTimeout(() => (button.style.pointerEvents = 'auto'), 3000)
+          setTimeout(() => (button.style.pointerEvents = 'auto'), 2000)
         }
       })
   }
@@ -47,7 +47,7 @@
   // 主执行函数
   const main = () => {
     setTimeout(clickExpandButtons, 2000)
-    setTimeout(clickTranslateButtons, 3000)
+    setTimeout(clickTranslateButtons, 2000)
   }
 
   // 监听DOM变化以处理动态加载的评论
