@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube自动翻译评论
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  自动点击YouTube评论区翻译按钮
 // @author       GeekXtop
 // @match        https://www.youtube.com/*
