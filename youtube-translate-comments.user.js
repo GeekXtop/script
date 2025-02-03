@@ -69,7 +69,7 @@
         clearTimeout(isScrolling)
         isScrolling = setTimeout(() => {
           clickTranslateButton()
-        }, 300)
+        }, config.debounceTime)
       },
       { passive: true }
     )
