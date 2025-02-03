@@ -6,6 +6,7 @@
 // @author       GeekXtop
 // @match        https://www.youtube.com/*
 // @grant        none
+// @licence      MIT
 // ==/UserScript==
 
 ;(function () {
