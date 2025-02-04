@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube自动展开&翻译评论
 // @namespace    http://tampermonkey.net/
-// @version      1.6
+// @version      1.7
 // @description  自动展开并翻译YouTube评论区回复
 // @author       GeekXtop
 // @match        https://www.youtube.com/watch*
@@ -11,6 +11,8 @@
 
 ;(function () {
   'use strict'
+
+  const clickTimeout = 2000
 
   // 自动点击"展开"按钮
   const clickExpandButtons = () => {
@@ -39,15 +41,15 @@
           console.log('已触发翻译')
           // 添加防抖处理避免重复点击
           button.style.pointerEvents = 'none'
-          setTimeout(() => (button.style.pointerEvents = 'auto'), 2000)
+          setTimeout(() => (button.style.pointerEvents = 'auto'), clickTimeout)
         }
       })
   }
 
   // 主执行函数
   const main = () => {
-    setTimeout(clickExpandButtons, 2000)
-    setTimeout(clickTranslateButtons, 2000)
+    setTimeout(clickExpandButtons, clickTimeout)
+    setTimeout(clickTranslateButtons, clickTimeout)
   }
 
   // 监听DOM变化以处理动态加载的评论
