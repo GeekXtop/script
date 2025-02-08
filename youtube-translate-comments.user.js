@@ -12,7 +12,7 @@
 ;(function () {
   'use strict'
 
-  const clickTimeout = 2000
+  const clickTimeout = 3000
 
   // 自动点击"展开"按钮
   const clickExpandButtons = () => {
@@ -54,10 +54,15 @@
 
   // 监听DOM变化以处理动态加载的评论
   const observer = new MutationObserver(main)
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  })
+  const commentsSection = document.getElementById('comments');
+  if (commentsSection) {
+    observer.observe(commentsSection, {
+      childList: true,
+      subtree: true,
+    });
+  } else {
+    console.warn('找不到评论区，MutationObserver可能无法正常工作');
+  }
 
   // 初始执行
   main()
